@@ -4,9 +4,9 @@ import {
   Boton,
   ContenedorBotonCentrado,
   Formulario,
+  Main,
   MensajeError,
   MensajeExito,
-
 } from "../styles/Formularios";
 import ComponenteInput from "../components/ComponenteInput";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -74,7 +74,7 @@ const Form = () => {
   };
 
   return (
-    <div>
+    <Main>
       <Formulario action="" onSubmit={onSubmit}>
         <ComponenteInput
           estado={usuario}
@@ -158,7 +158,7 @@ const Form = () => {
           )}
         </ContenedorBotonCentrado>
       </Formulario>
-    </div>
+    </Main>
   );
 };
 

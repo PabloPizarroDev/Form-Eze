@@ -3,10 +3,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const colores = {
   borde: "#0075FF",
-  error: "#bb2929",
+  error: "#FC5405",
   exito: "#1ed12d",
 };
 
+const Main = styled.main`
+  main {
+    position: absolute;
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+    padding: 40px;
+  }
+`;
 const Formulario = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -123,19 +132,25 @@ const ContenedorBotonCentrado = styled.div`
 `;
 
 const Boton = styled.button`
-  height: 45px;
-  line-height: 45px;
-  width: 30%;
-  background-color: #000;
+  background-color: transparent;
+
   color: #fff;
-  margin-left: 20px;
-  font-weight: bold;
-  border: none;
+  font-size: 1rem;
+  margin: 20px;
+  padding: 1rem 1.5rem;
+  font-family: "Kaushan Script";
+  font-weight: semibold;
+  border: 2px solid #eee;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem #ccc, -0.5rem -0.5rem 1rem #fff;
   cursor: pointer;
-  transition: 0.1s ease all;
+  transition: all 1s ease;
 
   &:hover {
-    box-shadow: 3px 0px 30px rgba(163, 163, 163, 1);
+    box-shadow: 0.5rem 0.5rem 1rem #fff, -0.5rem -0.5rem 1rem #ccc;
+  }
+  &:active {
+    box-shadow: inset 0.2rem 0.2rem 1rem #fff, inset -0.2rem -0.2rem 1rem #ccc;
   }
 `;
 
@@ -192,6 +207,45 @@ const ComponenteTextArea = styled.textarea`
     grid-column: span 1;
   }
 `;
+const Section = styled.section`
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+`;
+const VideoContainer = styled.section`
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -100;
+    background-size: cover;
+
+    @media (max-width: 48em) {
+      object-position: center 10%;
+    }
+  }
+  @media (max-width: 38em) {
+    object-position: center 50%;
+  }
+`;
+const DarkOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(32, 32, 32, 0.6);
+`;
 
 export {
   Formulario,
@@ -206,4 +260,8 @@ export {
   MensajeExito,
   MensajeError,
   ComponenteTextArea,
+  Main,
+  Section,
+  VideoContainer,
+  DarkOverlay,
 };

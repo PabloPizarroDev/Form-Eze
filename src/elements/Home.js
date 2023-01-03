@@ -8,7 +8,9 @@ import {
   Boton,
   ContenedorBotonCentrado,
   Formulario,
+  Main,
   MensajeError,
+  Section,
 } from "../styles/Formularios";
 
 const Home = () => {
@@ -33,50 +35,52 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <h1>Tramites del Consulado</h1>
-      <Formulario action="" onSubmit={onSubmit}>
-        <ComponenteInput
-          estado={usuario}
-          cambiarEstado={setUsuario}
-          tipo="text"
-          label="Usuario"
-          placeholder="Pablo1234"
-          name="usuario"
-          leyendaError="El usuario tiene que ser de 4 a 16 digitos y solo puede contener números, letras y guión bajo"
-          expresionRegular={expresiones.usuario}
-          required
-        />
-        <ComponenteInput
-          estado={password}
-          cambiarEstado={setPassword}
-          tipo="password"
-          label="Contraseña"
-          name="password1"
-          leyendaError="La contraseña tiene que ser de 4 a 12 digitos."
-          expresionRegular={expresiones.password}
-          required
-        />
-        {formularioValido === false && (
-          <MensajeError>
-            <p>
-              <FontAwesomeIcon icon={faExclamationTriangle} />
-              <b>Error:</b> Por favor rellena el formulario correctamente.
-            </p>
-            <p>
-              Si no tienes una cuenta realizada crea una
-              <Link to="/crearcuenta">cuenta nueva</Link>
-            </p>
-          </MensajeError>
-        )}
-        <ContenedorBotonCentrado>
-          <Boton type="submit">Enviar</Boton>
-          {formularioValido === true && <Navigate to="/form" />}
-        </ContenedorBotonCentrado>
-      </Formulario>
-      <p>Si no tienes una cuenta realizada crea una cuenta nueva</p>
-      <Link to="/crearcuenta">Click Aquí</Link>
-    </div>
+    <Section>
+      <Main>
+        <h1>Tramites del Consulado</h1>
+        <Formulario action="" onSubmit={onSubmit}>
+          <ComponenteInput
+            estado={usuario}
+            cambiarEstado={setUsuario}
+            tipo="text"
+            label="Usuario"
+            placeholder="Pablo1234"
+            name="usuario"
+            leyendaError="El usuario tiene que ser de 4 a 16 digitos y solo puede contener números, letras y guión bajo"
+            expresionRegular={expresiones.usuario}
+            required
+          />
+          <ComponenteInput
+            estado={password}
+            cambiarEstado={setPassword}
+            tipo="password"
+            label="Contraseña"
+            name="password1"
+            leyendaError="La contraseña tiene que ser de 4 a 12 digitos."
+            expresionRegular={expresiones.password}
+            required
+          />
+          {formularioValido === false && (
+            <MensajeError>
+              <p>
+                <FontAwesomeIcon icon={faExclamationTriangle} />
+                <b>Error:</b> Por favor rellena el formulario correctamente.
+              </p>
+              <p style={{ color: "#fff" }}>
+                Si no tienes una cuenta realizada crea una
+                <Link to="/crearcuenta">cuenta nueva</Link>
+              </p>
+            </MensajeError>
+          )}
+          <ContenedorBotonCentrado>
+            <Boton type="submit">Enviar</Boton>
+            {formularioValido === true && <Navigate to="/form" />}
+          </ContenedorBotonCentrado>
+        </Formulario>
+        <p>Si no tienes una cuenta realizada crea una cuenta nueva</p>
+        <Link to="/crearcuenta">Click Aquí</Link>
+      </Main>
+    </Section>
   );
 };
 
