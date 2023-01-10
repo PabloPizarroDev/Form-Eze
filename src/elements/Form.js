@@ -8,7 +8,9 @@ import {
   MensajeError,
   MensajeExito,
   Main,
+  VideoContainer,
 } from "../styles/Formularios";
+import MainVideo from "../assets/pexels-james-cheney-6662348.mp4";
 import ComponenteInput from "../components/ComponenteInput";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
@@ -74,57 +76,60 @@ const Form = () => {
   };
 
   return (
-    <Main>
-      <Formulario action="" onSubmit={onSubmit}>
-        <ComponenteInput
-          estado={correo}
-          cambiarEstado={setCorreo}
-          tipo="email"
-          label="Correo Electronico"
-          placeholder="pablo@correo.com"
-          name="correo"
-          leyendaError="El correo solo puede contener letras, numeros, simbolos, sin espacios en blanco."
-          expresionRegular={expresiones.correo}
-          required
-        />
+    <VideoContainer>
+      <Main>
+        <Formulario action="" onSubmit={onSubmit}>
+          <ComponenteInput
+            estado={correo}
+            cambiarEstado={setCorreo}
+            tipo="email"
+            label="Correo Electronico"
+            placeholder="pablo@correo.com"
+            name="correo"
+            leyendaError="El correo solo puede contener letras, numeros, simbolos, sin espacios en blanco."
+            expresionRegular={expresiones.correo}
+            required
+          />
 
-        <ComponenteTextArea
-          estado={comentarios}
-          cambiarEstado={setComentarios}
-          name="comentarios"
-          tipo="text"
-          label="Comentarios"
-          cols="50"
-          rows="5"
-          placeholder="Escribe tu Consulta"
-          leyendaError="Solo se pueden escribir 255 caracteres"
-          expresionRegular={expresiones.comentarios}
-          autoComplete="on"
-          autoCapitalize="words"
-          maxLength={255}
-          required
-        />
-        {formularioValido === false && (
-          <MensajeError>
-            <p>
-              <FontAwesomeIcon icon={faExclamationTriangle} />
-              <b>Error:</b> Por favor rellena el formulario correctamente.
-            </p>
-          </MensajeError>
-        )}
-
-        <ContenedorBotonCentrado>
-          <Boton type="submit">Enviar</Boton>
-          {formularioValido === true && (
-            <MensajeExito>
-              Formulario enviado exitosamente
-              {(isLogged === true) &
-              <Boton onClick={() => setIsLogged(false)}>LogOut</Boton>}
-            </MensajeExito>
+          <ComponenteTextArea
+            estado={comentarios}
+            cambiarEstado={setComentarios}
+            name="comentarios"
+            tipo="text"
+            label="Comentarios"
+            cols="50"
+            rows="5"
+            placeholder="Escribe tu Consulta"
+            leyendaError="Solo se pueden escribir 255 caracteres"
+            expresionRegular={expresiones.comentarios}
+            autoComplete="on"
+            autoCapitalize="words"
+            maxLength={255}
+            required
+          />
+          {formularioValido === false && (
+            <MensajeError>
+              <p>
+                <FontAwesomeIcon icon={faExclamationTriangle} />
+                <b>Error:</b> Por favor rellena el formulario correctamente.
+              </p>
+            </MensajeError>
           )}
-        </ContenedorBotonCentrado>
-      </Formulario>
-    </Main>
+
+          <ContenedorBotonCentrado>
+            <Boton type="submit">Enviar</Boton>
+            {formularioValido === true && (
+              <MensajeExito>
+                Formulario enviado exitosamente
+                {(isLogged === true) &
+                <Boton onClick={() => setIsLogged(false)}>LogOut</Boton>}
+              </MensajeExito>
+            )}
+          </ContenedorBotonCentrado>
+        </Formulario>
+      </Main>
+      <video src={MainVideo} type="video/mp4" autoPlay muted loop />
+    </VideoContainer>
   );
 };
 

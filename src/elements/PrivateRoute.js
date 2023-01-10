@@ -7,7 +7,7 @@ isLogged = null;
  isLogged = true; */
 
 const PrivateRoute = ({ isLogged }) => {
-  return isLogged ? <Outlet /> : <Navigate to="/" />;
+  return isLogged ? <Outlet /> : <Navigate to="/usuario" />;
 };
 
 export default PrivateRoute;

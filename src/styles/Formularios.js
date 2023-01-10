@@ -211,6 +211,7 @@ const Section = styled.section`
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+  background-image: url("../assets/background.svg");
 `;
 const VideoContainer = styled.section`
   width: 100%;

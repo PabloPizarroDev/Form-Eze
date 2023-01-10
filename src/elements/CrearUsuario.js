@@ -7,7 +7,9 @@ import {
   Main,
   MensajeError,
   MensajeExito,
+  VideoContainer,
 } from "../styles/Formularios";
+import MainVideo from "../assets/pexels-james-cheney-6662348.mp4"
 import ComponenteInput from "../components/ComponenteInput";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
@@ -74,6 +76,7 @@ const Form = () => {
   };
 
   return (
+    <VideoContainer>
     <Main>
       <Formulario action="" onSubmit={onSubmit}>
         <ComponenteInput
@@ -159,6 +162,8 @@ const Form = () => {
         </ContenedorBotonCentrado>
       </Formulario>
     </Main>
+         <video src={MainVideo} type="video/mp4" autoPlay muted loop />
+    </VideoContainer>
   );
 };
 

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Sirin+Stencil&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans:wght@300;400;500;600;700;800&family=Sirin+Stencil&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans:wght@300;400;500;600;700;800&family=Sirin+Stencil&display=swap");
 
 *,
 *::before,
@@ -8,15 +9,33 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "Raleway", sans-serif;
+  overflow: scroll;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background: darkorange;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: rgb(141, 78, 1);
+}
+body::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+html {
+  scroll-behavior: smooth;
+}
 
 a {
   color: darkorange;
   text-decoration: none;
   cursor: pointer;
 }
-body {
-  font-family: "Sirin Stencil", cursive;
-}
+
 main {
   color: rgb(255, 255, 255);
   max-width: 800px;
@@ -25,7 +44,7 @@ main {
   padding: 40px;
 }
 h1 {
-  font-family: "Kaushan Script";
+  font-family: "Raleway", sans-serif;
   font-size: 60px;
   text-align: center;
 }
